@@ -1,25 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-cream: #FAF7F2;
+  --color-brown: #2C1810;
+  --color-gold: #C8A876;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
 
 * { -webkit-tap-highlight-color: transparent; }
 
-body { @apply bg-cream text-brown font-sans; }
+body {
+  background-color: #FAF7F2;
+  color: #2C1810;
+  font-family: 'Inter', sans-serif;
+}
 
 .btn-primary {
-  @apply bg-brown text-cream px-4 py-3 rounded-xl font-medium hover:opacity-90 active:scale-95 transition-all text-base;
+  background-color: #2C1810;
+  color: #FAF7F2;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: opacity 0.15s, transform 0.1s;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
+.btn-primary:hover { opacity: 0.9; }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
 .btn-secondary {
-  @apply bg-gold text-brown px-4 py-3 rounded-xl font-medium hover:opacity-90 active:scale-95 transition-all text-base;
+  background-color: #C8A876;
+  color: #2C1810;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: opacity 0.15s, transform 0.1s;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
+.btn-secondary:hover { opacity: 0.9; }
+.btn-secondary:active { transform: scale(0.98); }
+.btn-secondary:disabled { opacity: 0.5; cursor: not-allowed; }
+
 .btn-ghost {
-  @apply border border-brown text-brown px-4 py-3 rounded-xl font-medium hover:bg-brown/5 active:scale-95 transition-all text-base;
+  background: transparent;
+  color: #2C1810;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1.5px solid #2C1810;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
+.btn-ghost:hover { background-color: rgba(44,24,16,0.06); }
+.btn-ghost:active { transform: scale(0.98); }
+
 .card {
-  @apply bg-white rounded-2xl shadow-sm p-5 border border-gray-100;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  padding: 1.25rem;
+  border: 1px solid #f0ece6;
 }
+
 .input-field {
-  @apply w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/60 focus:border-gold transition-all bg-white text-brown placeholder:text-brown/40;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e5e0d8;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #2C1810;
+  background: white;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  appearance: none;
 }
+.input-field:focus {
+  border-color: #C8A876;
+  box-shadow: 0 0 0 3px rgba(200,168,118,0.2);
+}
+.input-field::placeholder { color: rgba(44,24,16,0.35); }
